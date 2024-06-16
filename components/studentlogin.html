@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/loginpage.css">
+    <title>Student Login</title>
+</head>
+<body>
+    <div class="main-login">
+        <div class="left-login">
+            <h1>AvasSeva<br></h1>
+            <img src="../assets/images/asds.svg" class="left-login-image" alt="Imagem animada" style="width: 300px;">
+        </div>
+        <div class="right-login">
+            <div class="card-login">
+                <h1>Student</h1>
+                <form action="/api/auth/login" method="POST">
+                    <div class="textfield">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" placeholder="mail@am.students.amrita.edu" required>
+                    </div>
+                    <div class="textfield">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" placeholder="password" required>
+                    </div>
+                    <input type="hidden" name="role" value="student">
+                    <button type="submit" class="btn-login">Login</button>
+                </form>
+                <div class="btn-plus">
+                    <a class="btn-cadastre-se" href="./contactadmin.html">forgot password? <span class="span-cadastre-se"></span></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
