@@ -4,7 +4,7 @@ function login() {
 
   if (username === 'aswin@am.students.amrita.edu' && password === '123456789') {
       alert('Login successful');
-      window.location.href = './studentService.html';
+      window.location.href = './studentdashboard.html';
   } else {
       alert('Invalid username or password');
   }
