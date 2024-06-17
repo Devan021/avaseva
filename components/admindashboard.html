@@ -39,6 +39,9 @@
             bottom: 0;
             width: 100%;
         }
+        .table-container {
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
@@ -82,7 +85,7 @@
                 <button class="btn btn-secondary btn-block" onclick="showOrders('laundry')">Laundry Orders</button>
             </div>
         </div>
-        <div id="orders" class="mt-4"></div>
+        <div id="orders" class="table-container mt-4"></div>
     </div>
 
     <!-- Footer -->
@@ -104,7 +107,31 @@
             ordersDiv.innerHTML = `<h2>${type.charAt(0).toUpperCase() + type.slice(1)} Orders</h2>`;
             // Fetch and display orders based on type
             // This is a placeholder. Replace with actual data fetching logic.
-            ordersDiv.innerHTML += `<p>List of ${type} orders will be displayed here.</p>`;
+            let orders = [
+                { id: 1, name: 'John Doe', room: '101', status: 'Pending' },
+                { id: 2, name: 'Jane Smith', room: '102', status: 'Completed' },
+                { id: 3, name: 'Sam Wilson', room: '103', status: 'In Progress' }
+            ];
+            let table = `<table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Order ID</th>
+                                    <th>Name</th>
+                                    <th>Room</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>`;
+            orders.forEach(order => {
+                table += `<tr>
+                            <td>${order.id}</td>
+                            <td>${order.name}</td>
+                            <td>${order.room}</td>
+                            <td>${order.status}</td>
+                          </tr>`;
+            });
+            table += `</tbody></table>`;
+            ordersDiv.innerHTML += table;
         }
     </script>
 
