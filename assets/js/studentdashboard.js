@@ -1,41 +1,16 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const serviceForm = document.getElementById('serviceForm');
-    const orderList = document.getElementById('orderList');
-
-    serviceForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const service = document.getElementById('service').value;
-        addOrder(service);
-        redirectToServicePage(service);
+document.addEventListener('DOMContentLoaded', (event) => {
+    // Function to navigate to the cleaning service page
+    document.getElementById('cleaningButton').addEventListener('click', () => {
+        window.location.href = 'cleaningpage.html';
     });
 
-    function addOrder(service) {
-        const li = document.createElement('li');
-        li.textContent = `${service} - ${getServicePrice(service)}`;
-        orderList.appendChild(li);
-    }
+    // Function to navigate to the laundry service page
+    document.getElementById('laundryButton').addEventListener('click', () => {
+        window.location.href = 'studentService.html';
+    });
 
-    function getServicePrice(service) {
-        switch(service) {
-            case 'cleaning':
-                return '$20';
-            case 'laundry':
-                return '$15';
-            default:
-                return '$0';
-        }
-    }
-
-    function redirectToServicePage(service) {
-        let url = '';
-        switch(service) {
-            case 'cleaning':
-                url = 'cleaningservice.html';
-                break;
-            case 'laundry':
-                url = 'studentservice.html';
-                break;
-        }
-        window.location.href = url;
-    }
+    // Function to navigate to the feedback page
+    document.getElementById('feedbackButton').addEventListener('click', () => {
+        window.location.href = 'contactadmin.html';
+    });
 });
