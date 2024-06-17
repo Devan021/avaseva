@@ -1,24 +1,11 @@
-document.getElementById('login-form').addEventListener('submit', async function (e) {
-    e.preventDefault();
-  
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
-  
-    const response = await fetch('/api/auth/login', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ username, password })
-    });
-  
-    const data = await response.json();
-    if (response.ok) {
-      localStorage.setItem('token', data.token);
+function login() {
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
+
+  if (username === 'aswin@am.students.amrita.edu' && password === '123456789') {
       alert('Login successful');
-      window.location.href = 'studentService.html';
-    } else {
-      alert(data.msg);
-    }
-  });
-  
+      window.location.href = './studentService.html';
+  } else {
+      alert('Invalid username or password');
+  }
+}
